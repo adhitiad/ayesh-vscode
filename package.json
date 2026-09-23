@@ -1,0 +1,60 @@
+{
+  "name": "ayesh-vscode",
+  "displayName": "Ayesh",
+  "description": "Multi-Agent AI Orchestrator — klien VS Code untuk ayesh-core (gRPC)",
+  "version": "0.1.0",
+  "publisher": "ayesh",
+  "license": "MIT",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "ayesh.health",
+        "title": "Ayesh: Health Check"
+      },
+      {
+        "command": "ayesh.chat",
+        "title": "Ayesh: Chat"
+      },
+      {
+        "command": "ayesh.skills",
+        "title": "Ayesh: List Skills"
+      }
+    ],
+    "configuration": {
+      "title": "Ayesh",
+      "properties": {
+        "ayesh.grpcHost": {
+          "type": "string",
+          "default": "localhost:50051",
+          "description": "Host:port server gRPC ayesh-core."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "vscode:prepublish": "bun run compile",
+    "typecheck": "bunx tsc --noEmit -p ./"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.12.0",
+    "@grpc/proto-loader": "^0.8.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.9.3"
+  }
+}

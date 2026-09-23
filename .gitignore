@@ -1,0 +1,18 @@
+node_modules/
+out/
+*.vsix
+*.log
+logs/
+.env
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Dependencies
+bun.lockb
+bun.lock
