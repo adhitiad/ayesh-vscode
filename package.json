@@ -53,8 +53,8 @@
     "@grpc/proto-loader": "^0.8.0"
   },
   "devDependencies": {
-    "@types/node": "^20.14.0",
+    "@types/node": "^26.6.2",
     "@types/vscode": "^1.85.0",
-    "typescript": "^5.9.3"
+    "typescript": "^7.0.2"
   }
 }
