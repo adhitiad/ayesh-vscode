@@ -119,6 +119,8 @@ message Session {
   string agent_type = 2;
   string created_at = 3;
   string last_message = 4;
+  // Riwayat pesan JSON [{"role":"user|assistant","content":"..."}] dari session_memory.
+  string history = 5;
 }
 
 message GetSessionRequest {
@@ -152,6 +154,8 @@ message Config {
   int32 port = 5;
   string grpc_host = 6;
   int32 grpc_port = 7;
+  // True bila gRPC server berjalan dengan TLS (server-side, read-only).
+  bool grpc_tls = 8;
 }
 
 message SetConfigRequest {
